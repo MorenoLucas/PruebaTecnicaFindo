@@ -1,0 +1,11 @@
+## Documentación
+
+Al iniciar la prueba tecnica, vi claro que iba a realizar un componente donde se mustre la lista, un servicio donde cogemos los datos de la API, una pagina home, donde utilizamos el componente.
+Asi fue que empece realizando eso, ademas instale bootstrap ya que es lo que pedia en enunciado. 
+Para estructurar los datos, cree una interface de episodios, asi podia manejar que los datos sean esos que pido.
+En el servicio utilice el modulo de httpClient, para poder coger los datos de la api y observables para pasarselo al componente.
+En el componente de lista, cogi los datos en el ngOnit y los mostre, utilice el metodo length para ver la cantidad de personajes y un button para redireccionar al episodio.
+Al ver que la url devolvia otro json, decidi hacer otra pagina para mostrar mejor los datos del episodio y asi tambien mostrar los personajes que aparecian en el, por eso tuve que agregar metodos nuevos en el servicio, que dependiendo del episodio me coja los personajes y los muestro en dicha pagina.
+Agregué la librera ngx-infinite-scroll para poder hacer scroll infinito y mostrar las paginas de episodios.
+El problema que me surgio es el boton de volver arriba, ya que si utilizo la medida de windows funciona pero si utilizo la del div container, me deja de funcionar.
+Creo que con mas tiempo, el producto se puede mejorar, pero me centre en la logica y que se parecia al prototipo mandado. 

@@ -12,7 +12,7 @@ export class ListEspisodeComponent implements OnInit {
   episodes: Episode[] = [];
   characters: any;
   showButton = false;
-  pagNum: number = 1;
+  pagNum: number = 2;
   constructor(private apiService: ApiServService, private router: Router) {}
 
   ngOnInit(): void {
@@ -24,11 +24,11 @@ export class ListEspisodeComponent implements OnInit {
     this.apiService.setEpisode(i);
     this.router.navigate(['details', nomb]);
   }
-  @HostListener('window:scroll')
+  @HostListener('window:scroll' || 'container:scroll')
   onScroll(): void {
     const yOffset = window.pageYOffset;
     const scrollTop = document.documentElement.scrollTop;
-    this.showButton = (yOffset || scrollTop) > 100;
+    this.showButton = (yOffset || scrollTop) > 50;
   }
   onScrollTop(): void {
     document.documentElement.scrollTop = 0;

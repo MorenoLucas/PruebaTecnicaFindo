@@ -19,7 +19,6 @@
 }
 .container {
   height: 75vh;
-
   overflow-y: auto;
   width: 60vw;
   margin-top: 2em;
