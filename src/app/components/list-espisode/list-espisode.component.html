@@ -1,13 +1,21 @@
-<div class="list-group">
-  <div class="d-flex w-100 justify-content-between" *ngFor="let ep of episodes">
-    <h5 class="mb-1 p-2 bd-highlight">{{ ep.name }}</h5>
-    <p class="mb-2 p-2 bd-highlight">{{ ep.id }}</p>
-    <small>{{ ep.episode }}</small>
+<div infinite-scroll (scrolled)="onScrollDown()" [infiniteScrollDistance]="3">
+  <div class="list-group">
+    <div
+      class="d-flex w-100 justify-content-between"
+      *ngFor="let ep of episodes"
+    >
+      <h5 class="mb-1 p-2 bd-highlight">{{ ep.name }}</h5>
+      <p class="mb-2 p-2 bd-highlight">{{ ep.id }}</p>
+      <small>{{ ep.episode }}</small>
 
-    <p class="mb-1">{{ ep.air_date }}</p>
-    <p class="mb-1">{{ ep.characters.length }}</p>
-    <button (click)="goEpisode(ep.url, ep.name)" class="mb-1">
-      Detalles del episodio
-    </button>
+      <p class="mb-1">{{ ep.air_date }}</p>
+      <p class="mb-1">{{ ep.characters.length }}</p>
+      <button (click)="goEpisode(ep.url, ep.name)" class="mb-1">
+        Detalles del episodio
+      </button>
+    </div>
   </div>
+  <button type="button" class="up" *ngIf="showButton" (click)="onScrollTop()">
+    /
+  </button>
 </div>

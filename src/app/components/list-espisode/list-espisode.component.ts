@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Episode } from 'src/app/interface/episode';
 import { ApiServService } from 'src/app/services/api-serv.service';
@@ -11,6 +11,8 @@ import { ApiServService } from 'src/app/services/api-serv.service';
 export class ListEspisodeComponent implements OnInit {
   episodes: Episode[] = [];
   characters: any;
+  showButton = false;
+  pagNum: number = 1;
   constructor(private apiService: ApiServService, private router: Router) {}
 
   ngOnInit(): void {
@@ -21,5 +23,23 @@ export class ListEspisodeComponent implements OnInit {
   goEpisode(i: string, nomb: string) {
     this.apiService.setEpisode(i);
     this.router.navigate(['details', nomb]);
+  }
+  @HostListener('window:scroll')
+  onScroll(): void {
+    const yOffset = window.pageYOffset;
+    const scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    this.showButton = (yOffset || scrollTop) > 500;
+  }
+  onScrollTop(): void {
+    document.documentElement.scrollTop = 0;
+  }
+  onScrollDown(): void {
+    this.pagNum++;
+    if (this.pagNum <= 3) {
+      this.apiService.getEpisodesByPage(this.pagNum).subscribe((item: any) => {
+        this.episodes = this.episodes.concat(item.results);
+      });
+    }
   }
 }

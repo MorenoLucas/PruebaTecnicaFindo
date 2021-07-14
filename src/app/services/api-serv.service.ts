@@ -11,6 +11,8 @@ export class ApiServService {
   episode: any;
   characters: any = [];
   personaje: any;
+  showButton = false;
+
   constructor(private http: HttpClient) {}
 
   getEpisodes(): Observable<Episode> {
@@ -35,5 +37,8 @@ export class ApiServService {
       );
     });
     return this.characters;
+  }
+  getEpisodesByPage(page: number): any {
+    return this.http.get<Episode>(this.url + '?page=' + page);
   }
 }

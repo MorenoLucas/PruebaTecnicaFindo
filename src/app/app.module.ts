@@ -8,10 +8,21 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './pages/details/details.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
-  declarations: [AppComponent, ListEspisodeComponent, HomeComponent, DetailsComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    ListEspisodeComponent,
+    HomeComponent,
+    DetailsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    InfiniteScrollModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
