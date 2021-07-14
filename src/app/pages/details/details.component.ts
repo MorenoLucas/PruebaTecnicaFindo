@@ -22,13 +22,14 @@ export class DetailsComponent implements OnInit {
       created: '',
     };
   }
-
+  //obetenemos del servicio el episodio y los personajes
   ngOnInit(): void {
     this.apiServcice.getEpisode().subscribe((epi: Episode) => {
       this.episode = epi;
     });
     this.characters = this.apiServcice.getCharacter();
   }
+  //vuelve al inicio
   goHome(): void {
     this.router.navigate(['/']);
   }

@@ -14,7 +14,7 @@ export class ApiServService {
   showButton = false;
 
   constructor(private http: HttpClient) {}
-
+  // Obtengo los episodios
   getEpisodes(): Observable<Episode> {
     return this.http.get<Episode>(this.url);
   }
@@ -26,6 +26,7 @@ export class ApiServService {
   getEpisode(): Observable<Episode> {
     return this.episode;
   }
+  //obtenemos los personajes del episodio seleccionado
   getCharacter() {
     this.getEpisode().subscribe((item) => {
       item.characters.forEach((i) =>
@@ -38,6 +39,7 @@ export class ApiServService {
     });
     return this.characters;
   }
+  //devolvemos la nueva pagina para agregar mas episodios
   getEpisodesByPage(page: number): any {
     return this.http.get<Episode>(this.url + '?page=' + page);
   }
