@@ -27,19 +27,18 @@ export class ListEspisodeComponent implements OnInit {
   @HostListener('window:scroll')
   onScroll(): void {
     const yOffset = window.pageYOffset;
-    const scrollTop =
-      document.documentElement.scrollTop || document.body.scrollTop;
-    this.showButton = (yOffset || scrollTop) > 500;
+    const scrollTop = document.documentElement.scrollTop;
+    this.showButton = (yOffset || scrollTop) > 100;
   }
   onScrollTop(): void {
     document.documentElement.scrollTop = 0;
   }
   onScrollDown(): void {
-    this.pagNum++;
     if (this.pagNum <= 3) {
       this.apiService.getEpisodesByPage(this.pagNum).subscribe((item: any) => {
         this.episodes = this.episodes.concat(item.results);
       });
+      this.pagNum++;
     }
   }
 }

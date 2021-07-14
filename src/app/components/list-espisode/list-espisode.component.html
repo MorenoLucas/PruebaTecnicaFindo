@@ -1,21 +1,42 @@
-<div infinite-scroll (scrolled)="onScrollDown()" [infiniteScrollDistance]="3">
-  <div class="list-group">
+<div class="container">
+  <div
+    class="list-group"
+    infinite-scroll
+    (scrolled)="onScrollDown()"
+    [infiniteScrollDistance]="3"
+  >
     <div
-      class="d-flex w-100 justify-content-between"
+      class="
+        d-flex
+        w-100
+        justify-content-around
+        row
+        align-items-center
+        shadow
+        p-3
+        mb-2
+        bg-white
+        rounded
+      "
       *ngFor="let ep of episodes"
     >
-      <h5 class="mb-1 p-2 bd-highlight">{{ ep.name }}</h5>
-      <p class="mb-2 p-2 bd-highlight">{{ ep.id }}</p>
-      <small>{{ ep.episode }}</small>
-
-      <p class="mb-1">{{ ep.air_date }}</p>
-      <p class="mb-1">{{ ep.characters.length }}</p>
-      <button (click)="goEpisode(ep.url, ep.name)" class="mb-1">
+      <div class="row">
+        <h4 class="col text-left">{{ ep.name }}</h4>
+        <p class="col">{{ ep.episode }}</p>
+      </div>
+      <p class="ml-1">ID: {{ ep.id }}</p>
+      <div class="row">
+        <p class="col">{{ ep.air_date }}</p>
+        <p class="col justify-content-right">
+          N Characters: {{ ep.characters.length }}
+        </p>
+      </div>
+      <button (click)="goEpisode(ep.url, ep.name)" class="btn btn-light w-auto">
         Detalles del episodio
       </button>
     </div>
+    <button type="button" class="up" *ngIf="showButton" (click)="onScrollTop()">
+      /
+    </button>
   </div>
-  <button type="button" class="up" *ngIf="showButton" (click)="onScrollTop()">
-    /
-  </button>
 </div>

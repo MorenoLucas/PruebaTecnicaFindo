@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Episode } from 'src/app/interface/episode';
 import { ApiServService } from 'src/app/services/api-serv.service';
 
@@ -10,7 +11,7 @@ import { ApiServService } from 'src/app/services/api-serv.service';
 export class DetailsComponent implements OnInit {
   episode: Episode;
   characters: string[] = [];
-  constructor(private apiServcice: ApiServService) {
+  constructor(private apiServcice: ApiServService, private router: Router) {
     this.episode = {
       name: '',
       id: 0,
@@ -27,5 +28,8 @@ export class DetailsComponent implements OnInit {
       this.episode = epi;
     });
     this.characters = this.apiServcice.getCharacter();
+  }
+  goHome(): void {
+    this.router.navigate(['/']);
   }
 }

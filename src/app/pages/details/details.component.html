@@ -1,13 +1,29 @@
-<div class="list-group">
-  <div class="d-flex w-100 justify-content-between">
-    <h5 class="mb-1 p-2 bd-highlight">{{ episode.name }}</h5>
-    <p class="mb-2 p-2 bd-highlight">{{ episode.id }}</p>
-    <small>{{ episode.episode }}</small>
+<button class="btn btn-light m-2" (click)="goHome()">Home</button>
+<div class="container">
+  <div class="list-group" infinite-scroll [infiniteScrollDistance]="3">
+    <div
+      class="
+        d-flex
+        w-100
+        justify-content-between
+        row
+        align-items-center
+        shadow
+        p-3
+        mb-5
+        bg-white
+        rounded
+      "
+    >
+      <h4 class="justify-content-start">{{ episode.name }}</h4>
+      <p class="col-4 aling-self-center">ID: {{ episode.id }}</p>
+      <small class="col-4 aling-self-send">{{ episode.episode }}</small>
 
-    <p class="mb-1">{{ episode.air_date }}</p>
-    <h4>Characters</h4>
-    <div *ngFor="let item of characters">
-      <p class="mb-1">{{ item }}</p>
+      <p class="mb-1">{{ episode.air_date }}</p>
+      <h4>Characters</h4>
+      <p class="col-4 justify-content-right" *ngFor="let item of characters">
+        {{ item }}
+      </p>
     </div>
   </div>
 </div>
