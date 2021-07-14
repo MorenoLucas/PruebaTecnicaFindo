@@ -1,1 +1,11 @@
-<p>list-espisode works!</p>
+<div class="list-group">
+  <div class="d-flex w-100 justify-content-between" *ngFor="let ep of episodes">
+    <h5 class="mb-1 p-2 bd-highlight">{{ ep.name }}</h5>
+    <p class="mb-2 p-2 bd-highlight">{{ ep.id }}</p>
+    <small>{{ ep.episode }}</small>
+
+    <p class="mb-1">{{ ep.air_date }}</p>
+    <p class="mb-1">{{ ep.characters.length }}</p>
+    <a href="{{ ep.url }}" class="mb-1">{{ ep.url }}</a>
+  </div>
+</div>

@@ -8,10 +8,19 @@ import { Episode } from '../interface/episode';
 })
 export class ApiServService {
   private url: string = 'https://rickandmortyapi.com/api/episode';
+  episode: any;
 
   constructor(private http: HttpClient) {}
 
   getEpisodes(): Observable<Episode> {
     return this.http.get<Episode>(this.url);
+  }
+  //obtengo url del episodio selecionado
+  setEpisode(url: string) {
+    this.episode = this.http.get(url);
+  }
+  //muestro episodio
+  getEpisode() {
+    return this.episode;
   }
 }
