@@ -2,26 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
-## Development server
+## Documentación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Contiene distintos componentes, el componente List-episodes, donde cogemos los datos de los episodios que nos brinda el servicio y se muestra en forma de lista.
+En el servicio, utilizamos la logica para obtener los datos de la api como de los personajes asi se puede reutilizar en cualquier componente de la web.
+Tenemos un interface para estructurar mejor los datos de los episodios.
+Contamos con dos paginas, una la Home donde mostramos el componente de lista de episodio y otra pagina detalle, donde se muestra en detalle cada episodio, obteniendo los datos por medio del servicio y modificando la url al nombre del episodio.
