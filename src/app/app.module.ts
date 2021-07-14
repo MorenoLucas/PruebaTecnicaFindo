@@ -7,9 +7,10 @@ import { ListEspisodeComponent } from './components/list-espisode/list-espisode.
 import { HomeComponent } from './pages/home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './pages/details/details.component';
 
 @NgModule({
-  declarations: [AppComponent, ListEspisodeComponent, HomeComponent],
+  declarations: [AppComponent, ListEspisodeComponent, HomeComponent, DetailsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

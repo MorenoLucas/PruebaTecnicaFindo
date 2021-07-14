@@ -18,7 +18,7 @@ export class ListEspisodeComponent implements OnInit {
       this.episodes = item.results;
     });
   }
-  goEpisode(i, nomb) {
+  goEpisode(i: string, nomb: string) {
     this.apiService.setEpisode(i);
     this.router.navigate(['details', nomb]);
   }
