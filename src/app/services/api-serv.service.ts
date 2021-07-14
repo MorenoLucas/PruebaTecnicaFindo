@@ -9,7 +9,8 @@ import { Episode } from '../interface/episode';
 export class ApiServService {
   private url: string = 'https://rickandmortyapi.com/api/episode';
   episode: any;
-
+  characters: any = [];
+  personaje: any;
   constructor(private http: HttpClient) {}
 
   getEpisodes(): Observable<Episode> {
@@ -20,7 +21,19 @@ export class ApiServService {
     this.episode = this.http.get(url);
   }
   //muestro episodio
-  getEpisode() {
+  getEpisode(): Observable<Episode> {
     return this.episode;
+  }
+  getCharacter() {
+    this.getEpisode().subscribe((item) => {
+      item.characters.forEach((i) =>
+        this.http.get(i).subscribe((pers) => {
+          this.personaje = pers;
+          const per = this.personaje.name;
+          this.characters.push(per);
+        })
+      );
+    });
+    return this.characters;
   }
 }

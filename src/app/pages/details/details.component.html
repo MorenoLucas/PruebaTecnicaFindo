@@ -1,1 +1,13 @@
-<p>details works!</p>
+<div class="list-group">
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1 p-2 bd-highlight">{{ episode.name }}</h5>
+    <p class="mb-2 p-2 bd-highlight">{{ episode.id }}</p>
+    <small>{{ episode.episode }}</small>
+
+    <p class="mb-1">{{ episode.air_date }}</p>
+    <div *ngFor="let item of characters">
+      characters
+      <p class="mb-1">{{ item }}</p>
+    </div>
+  </div>
+</div>

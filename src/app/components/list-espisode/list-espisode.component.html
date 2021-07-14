@@ -6,6 +6,8 @@
 
     <p class="mb-1">{{ ep.air_date }}</p>
     <p class="mb-1">{{ ep.characters.length }}</p>
-    <a (click)="goEpisode(ep.url, ep.name)" class="mb-1">{{ ep.url }}</a>
+    <button (click)="goEpisode(ep.url, ep.name)" class="mb-1">
+      Detalles del episodio
+    </button>
   </div>
 </div>
