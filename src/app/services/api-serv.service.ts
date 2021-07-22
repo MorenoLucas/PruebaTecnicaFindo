@@ -28,6 +28,7 @@ export class ApiServService {
   }
   //obtenemos los personajes del episodio seleccionado
   getCharacter() {
+    this.characters = [];
     this.getEpisode().subscribe((item) => {
       item.characters.forEach((i) =>
         this.http.get(i).subscribe((pers) => {
