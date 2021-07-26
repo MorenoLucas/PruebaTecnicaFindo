@@ -1,0 +1,12 @@
+.contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor :nth-child(1) {
+  grid-column: 1;
+}
+.contenedor :nth-child(2) {
+  grid-column: 2 / span 2;
+}
