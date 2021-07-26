@@ -23,7 +23,7 @@ export class ListEspisodeComponent implements OnInit {
   //vamos al episodio seleccionado
   goEpisode(i: string, nomb: string) {
     this.apiService.setEpisode(i);
-    this.router.navigate(['details', nomb]);
+    // this.router.navigate(['details', nomb]);
   }
   //escuchanmo la ventana para hacer aparecer el botton de ir arriba
   @HostListener('window:scroll' || 'container:scroll')

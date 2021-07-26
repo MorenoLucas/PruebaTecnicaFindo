@@ -1,3 +1,5 @@
 <div class="contenedor">
-  <app-list-espisode> </app-list-espisode>
+  <app-list-espisode (click)="most()"> </app-list-espisode>
+  <app-details *ngIf="mostrar"></app-details>
+  <button (click)="most()" *ngIf="!x">X</button>
 </div>
