@@ -20,10 +20,12 @@
       <small class="col-4 aling-self-send">{{ episode.episode }}</small>
 
       <p class="mb-1">{{ episode.air_date }}</p>
-      <h4>Characters</h4>
-      <p class="col-4 justify-content-right" *ngFor="let item of characters">
-        {{ item }}
-      </p>
+      <h4 class="">Characters</h4>
+      <img
+        class="col-4 justify-content-right rounded-circle mb-2"
+        *ngFor="let item of characters"
+        src="{{ item }}"
+      />
     </div>
   </div>
 </div>

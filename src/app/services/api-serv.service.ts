@@ -34,7 +34,7 @@ export class ApiServService {
       item.characters.forEach((i) =>
         this.http.get(i).subscribe((pers) => {
           this.personaje = pers;
-          const per = this.personaje.name;
+          const per = this.personaje.image;
           this.characters.push(per);
         })
       );
