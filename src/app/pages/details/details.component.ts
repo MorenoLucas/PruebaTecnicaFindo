@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Episode } from 'src/app/interface/episode';
+import { Personaje } from 'src/app/interface/personaje';
 import { ApiServService } from 'src/app/services/api-serv.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ApiServService } from 'src/app/services/api-serv.service';
 })
 export class DetailsComponent implements OnInit {
   episode: Episode;
-  characters: string[] = [];
+  characters: Personaje[] = [];
   constructor(private apiServcice: ApiServService, private router: Router) {
     this.episode = {
       name: '',

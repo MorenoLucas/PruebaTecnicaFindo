@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Episode } from '../interface/episode';
 import { environment } from '../../environments/environment';
-
+import { Personaje } from '../interface/personaje';
 @Injectable({
   providedIn: 'root',
 })
 export class ApiServService {
   private url: string = environment.url;
   episode: any;
-  characters: any = [];
+  characters: Personaje[] = [];
   personaje: any;
   showButton = false;
 
@@ -35,7 +35,8 @@ export class ApiServService {
         this.http.get(i).subscribe((pers) => {
           this.personaje = pers;
           const per = this.personaje.image;
-          this.characters.push(per);
+          const name = this.personaje.name;
+          this.characters.push({ name: name, img: per });
         })
       );
     });

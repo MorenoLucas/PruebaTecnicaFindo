@@ -21,11 +21,15 @@
 
       <p class="mb-1">{{ episode.air_date }}</p>
       <h4 class="">Characters</h4>
-      <img
-        class="col-4 justify-content-right rounded-circle mb-2"
+      <div
+        class="col-4 justify-content-right item"
         *ngFor="let item of characters"
-        src="{{ item }}"
-      />
+      >
+        <img class="rounded-circle" src="{{ item.img }}" />
+        <p class="titulo">
+          {{ item.name }}
+        </p>
+      </div>
     </div>
   </div>
 </div>

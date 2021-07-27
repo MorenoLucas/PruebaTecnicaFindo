@@ -7,3 +7,16 @@
 img {
   width: 180px;
 }
+.item {
+  margin-bottom: 4em;
+}
+.titulo {
+  font-size: 10px;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+  margin-top: -40px;
+  margin-left: -2em;
+  font-weight: 800;
+}
